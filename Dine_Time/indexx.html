@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="DINETIME - Discover and book the best restaurants" />
+    <title>DINETIME - Home</title>
+
+    <!-- Preload Bootstrap CSS -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      />
+    </noscript>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="home.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="indexx.html">DINETIME</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="indexx.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurant.html">RESTAURANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookings.html">BOOKINGS</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="searchForm" role="search" aria-label="Search restaurants">
+                    <input
+                      class="form-control me-2"
+                      type="search"
+                      placeholder="Search restaurants..."
+                      aria-label="Search restaurants"
+                      id="searchInput"
+                      autocomplete="off"
+                    />
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container hero-content">
+            <h1 class="display-4 fw-bold">Discover Amazing Dining Experiences</h1>
+            <p class="lead">Book your table at the best restaurants in town</p>
+            <a href="restaurant.html" class="btn btn-primary btn-lg mt-3">Explore Restaurants</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold">Why Choose DINETIME?</h2>
+                    <p class="lead text-muted">Experience the best in dining with our premium features</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">🍽️</div>
+                        <h4>Premium Restaurants</h4>
+                        <p>Curated selection of the finest dining establishments in your area.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Instant Booking</h4>
+                        <p>Quick and easy reservation system with instant confirmation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">🌟</div>
+                        <h4>Exclusive Offers</h4>
+                        <p>Access to special deals and promotions at partner restaurants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants -->
+    <main class="container my-5">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="display-5 fw-bold">Featured Restaurants</h2>
+                <p class="lead text-muted">Discover our handpicked selection of exceptional dining venues</p>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="featuredRestaurantsContainer">
+            <!-- Featured restaurant cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Partner Restaurants</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10000">0</span>
+                        <span class="stat-label">Successful Bookings</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="99">0</span>
+                        <span class="stat-label">Satisfaction Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>DINETIME</h5>
+                    <p class="mb-0">Your premier destination for exceptional dining experiences.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="indexx.html" class="text-light">Home</a></li>
+                                <li><a href="restaurant.html" class="text-light">Restaurants</a></li>
+                                <li><a href="bookings.html" class="text-light">Bookings</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6>Contact</h6>
+                            <p class="mb-0 small">support@dinetime.com<br>(555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 DINETIME. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 9999;"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

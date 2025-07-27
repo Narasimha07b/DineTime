@@ -1,0 +1,139 @@
+/* Booking Page Specific Styles */
+.booking-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.booking-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: var(--light-color);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.booking-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 20px 20px 0 0;
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: rgba(139, 95, 38, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(139, 95, 38, 0.1);
+}
+
+.form-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.form-section h3::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background-color: var(--primary-color);
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.floating-label input,
+.floating-label select,
+.floating-label textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.floating-label input:focus,
+.floating-label select:focus,
+.floating-label textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 95, 38, 0.1);
+}
+
+.booking-summary {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--light-color);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.booking-summary h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-indicator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.progress-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.progress-step.completed {
+  background-color: var(--success-color);
+  color: var(--light-color);
+}
+
+@media (max-width: 768px) {
+  .booking-form {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+}

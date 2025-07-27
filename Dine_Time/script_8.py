@@ -1,0 +1,303 @@
+# Enhanced bookings.html
+bookings_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="DINETIME - Book your table at top restaurants" />
+    <title>DINETIME - Bookings</title>
+    
+    <!-- Preload Bootstrap CSS -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      />
+    </noscript>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/booking.css" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="indexx.html">DINETIME</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexx.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurant.html">RESTAURANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="bookings.html">BOOKINGS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="booking-container">
+        <div class="container">
+            <div class="booking-form animate-fade">
+                <div class="text-center mb-4">
+                    <h1 class="display-6 fw-bold">Book Your Table</h1>
+                    <p class="text-muted">Reserve your perfect dining experience</p>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="progress-indicator mb-4">
+                    <div class="progress-step active">1</div>
+                    <div class="progress-step">2</div>
+                    <div class="progress-step">3</div>
+                </div>
+
+                <form id="bookingForm" novalidate>
+                    <!-- Personal Information Section -->
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="name"
+                                  name="name"
+                                  required
+                                  aria-describedby="nameHelp"
+                                />
+                                <div class="invalid-feedback">Please enter your full name.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email *</label>
+                                <input
+                                  type="email"
+                                  class="form-control"
+                                  id="email"
+                                  name="email"
+                                  required
+                                  aria-describedby="emailHelp"
+                                />
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input
+                              type="tel"
+                              class="form-control"
+                              id="phone"
+                              name="phone"
+                              required
+                              aria-describedby="phoneHelp"
+                              pattern="^\\+?[0-9\\-\\s]{7,15}$"
+                            />
+                            <div class="invalid-feedback">
+                              Please enter a valid phone number (7-15 digits, optional +).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Details Section -->
+                    <div class="form-section">
+                        <h3>Booking Details</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="restaurant" class="form-label">Restaurant *</label>
+                                <select class="form-select" id="restaurant" name="restaurant" required>
+                                    <option value="" selected disabled>Select a restaurant</option>
+                                    <!-- Options will be loaded dynamically -->
+                                </select>
+                                <div class="invalid-feedback">Please select a restaurant.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="guests" class="form-label">Number of Guests *</label>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="guests"
+                                  name="guests"
+                                  min="1"
+                                  max="20"
+                                  required
+                                />
+                                <div class="invalid-feedback">
+                                  Please enter a number of guests between 1 and 20.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="date" class="form-label">Date *</label>
+                                <input type="date" class="form-control" id="date" name="date" required />
+                                <div class="invalid-feedback">Please select a valid date.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="time" class="form-label">Time *</label>
+                                <input type="time" class="form-control" id="time" name="time" required />
+                                <div class="invalid-feedback">Please select a valid time.</div>
+                                <div class="form-text">Restaurant hours: 10:00 AM - 10:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="special" class="form-label">Special Requests</label>
+                            <textarea 
+                              class="form-control" 
+                              id="special" 
+                              name="special" 
+                              rows="3"
+                              placeholder="Any dietary restrictions, special occasions, or additional requests..."
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Booking Summary -->
+                    <div id="bookingSummary" class="booking-summary d-none">
+                        <h4>Booking Summary</h4>
+                        <div class="summary-item">
+                            <span>Restaurant:</span>
+                            <span id="summaryRestaurant">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Date:</span>
+                            <span id="summaryDate">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Time:</span>
+                            <span id="summaryTime">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Guests:</span>
+                            <span id="summaryGuests">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <span class="btn-text">Confirm Booking</span>
+                            <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div
+      class="modal fade"
+      id="confirmationModal"
+      tabindex="-1"
+      aria-labelledby="confirmationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="confirmationModalLabel">Booking Confirmed</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="confirmationMessage">
+            <!-- Confirmation message will be inserted here -->
+          </div>
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.print()"
+            >
+              Print Confirmation
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>DINETIME</h5>
+                    <p class="mb-0">Your premier destination for exceptional dining experiences.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="indexx.html" class="text-light">Home</a></li>
+                                <li><a href="restaurant.html" class="text-light">Restaurants</a></li>
+                                <li><a href="bookings.html" class="text-light">Bookings</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6>Contact</h6>
+                            <p class="mb-0 small">support@dinetime.com<br>(555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 DINETIME. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 9999;"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
+"""
+
+# Write the enhanced bookings HTML file
+with open('bookings.html', 'w', encoding='utf-8') as f:
+    f.write(bookings_html)
+
+print("✅ Created enhanced bookings.html")

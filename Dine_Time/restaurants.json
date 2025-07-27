@@ -1,0 +1,38 @@
+[
+  {
+    "name": "The Golden Spoon",
+    "description": "Fine dining with a modern twist, offering seasonal menus and exquisite wines.",
+    "image": "images/one.jpeg",
+    "rating": 4.8
+  },
+  {
+    "name": "Urban Grill",
+    "description": "Casual dining with a focus on grilled specialties and local ingredients.",
+    "image": "images/two.jpeg",
+    "rating": 4.5
+  },
+  {
+    "name": "Sea Breeze Cafe",
+    "description": "Cozy seaside cafe serving fresh seafood and refreshing cocktails.",
+    "image": "images/three.jpeg",
+    "rating": 4.6
+  },
+  {
+    "name": "Mountain View Bistro",
+    "description": "Rustic bistro with stunning mountain views and hearty comfort food.",
+    "image": "images/four.jpeg",
+    "rating": 4.7
+  },
+  {
+    "name": "Garden Delight",
+    "description": "Vegetarian and vegan-friendly restaurant with organic, farm-to-table dishes.",
+    "image": "images/five.jpeg",
+    "rating": 4.9
+  },
+  {
+    "name": "City Lights Diner",
+    "description": "Classic diner experience with all-day breakfast and homemade pies.",
+    "image": "images/six.jpeg",
+    "rating": 4.3
+  }
+]
